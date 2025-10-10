@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Stone Paper Scissors</h1>
+    <p>Choose any one:</p>
+    <button onclick="plays('stone')">Stone</button>
+    <button onclick="plays('paper')">Paper</button>
+    <button onclick="plays('scissors')">Scissors</button>
+    <p id="result"></p>
+
+
+    <script>
+        const options=['stone','paper','scissors'];
+        function plays(userChoice){
+            const computerChoice=options[Math.floor(Math.random()*3)];
+            let message=`Your choice ${userChoice} | Computer choice ${computerChoice}<br>`;
+            if (userChoice===computerChoice){
+                message +="It's a Tie!";
+            }
+            else if (
+                (userChoice==="stone" && computerChoice==="scissors") ||
+                (userChoice==="scissors" && computerChoice==="paper") ||
+                (userChoice==="paper" && computerChoice==="stone")
+            ) {
+                message +="You Win!";
+            }
+            else {
+                message +="You Lose!";
+            }
+        document.getElementById("result").innerHTML = message;
+        }
+    </script>
+</body>
+</html>
