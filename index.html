@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .boxs{
+            background-color: black;
+            border: wheat;
+            border-radius: 5px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: minmax(100px, auto);
+        }
+        .box {
+            border: 2px solid  black;
+            border-radius: 5px;
+            background-color: rgb(126, 181, 181);
+            padding: 1rem;
+            color: black;
+        }
+        .box1{
+            grid-column-start: 1;
+            grid-column-end: 4;
+            display: center;
+        }
+        .box2{
+            grid-row-start: 2;
+            grid-row-end: 4;
+        }
+        .box5{
+            grid-column-start: 2;
+            grid-column-end: 4;
+            
+        }
+        .box6{
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+        .box7{
+            grid-column-start: 1;
+            grid-column-end: 4;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="boxs">
+    <div class="box box1">one</div>
+    <div class="box box2">two</div>
+    <div class="box box3">three</div>
+    <div class="box box4">four</div>
+    <div class="box box5">five</div>
+    <div class="box box6">six</div>
+    <div class="box box7">seven</div>
+    </div>
+</body>
+</html>
