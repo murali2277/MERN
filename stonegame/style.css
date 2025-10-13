@@ -1,5 +1,27 @@
-* {
+body {
+    background-color: #222;
     color:antiquewhite;
-    margin: 20%;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
     align-items: center;
+}
+
+.main{
+    border-radius: 5px;
+    padding: 40px 0 100px;
+    align-items: center;
+    width: 50%;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+button{
+    padding: 10px 20px  ;
 }
