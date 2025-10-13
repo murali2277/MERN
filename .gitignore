@@ -1,0 +1,105 @@
+# Node
+node_modules/
+.npm/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Vite / Build outputs
+dist/
+.build/
+.env
+.env.*
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Coverage
+coverage/
+coverage-final.json
+
+# Test output
+jest.config.ts
+jest.config.js
+
+# Misc
+*.pem
+*.key
+*.crt
+
+# React / frontend
+build/
+public/build/
+
+# Typescript
+*.tsbuildinfo
+
+# Storybook
+storybook-static/
+
+# Optional npm cache
+.npmrc
+
+# Mac
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Environment overrides
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Lockfiles
+package-lock.json
+
+# IDEs
+*.iml
+
+# Yarn v2
+.pnp.*
+
+# Parcel cache
+.cache/
+
+# Logs
+logs
+*.log
+
+# Local npm
+.npm/
+
+# Yarn Integrity
+.yarn-integrity
+
+# pnpm store
+.pnpm-store
+
+# Temporary files
+tmp/
+temp/
+
+# Build artifacts
+*.tgz
+
+# Storybook cache
+.cache-storybook
