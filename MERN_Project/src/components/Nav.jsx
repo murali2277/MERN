@@ -16,6 +16,8 @@ function Nav() {
       <Link className="nav-link" to="/likes">
         Likes
       </Link>
+      <Link className="nav-link" to="/useeffect">
+      UseEffect</Link>
     </nav>
   );
 }

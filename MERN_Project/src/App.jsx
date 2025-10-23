@@ -6,6 +6,7 @@ import About from "./components/About";
 import Count from "./components/Count";
 import Like from "./components/Like";
 import Nav from "./components/Nav";
+import Example from "./components/Useeffect";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -25,6 +26,7 @@ function App() {
         <Route path="/about" element={<About />}></Route>
         <Route path="/count" element={<Count />}></Route>
         <Route path="/likes" element={<Like />}></Route>
+        <Route path="/useeffect" element={<Example />}></Route>
       </Routes>
     </Router>
   );
