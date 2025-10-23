@@ -3,15 +3,13 @@ import React, { useState } from "react";
 function LikeDislike() {
   const [likes, setLikes] = useState(0);
   const [dislikes, setDislikes] = useState(0);
-  const [userReaction, setUserReaction] = useState(null); // "like" | "dislike" | null
+  const [userReaction, setUserReaction] = useState(null);
 
   const handleLike = () => {
     if (userReaction === "like") {
-      // If already liked → undo like
       setLikes(likes - 1);
       setUserReaction(null);
     } else {
-      // If disliked earlier → remove dislike
       if (userReaction === "dislike") {
         setDislikes(dislikes - 1);
       }
@@ -22,11 +20,9 @@ function LikeDislike() {
 
   const handleDislike = () => {
     if (userReaction === "dislike") {
-      // If already disliked → undo dislike
       setDislikes(dislikes - 1);
       setUserReaction(null);
     } else {
-      // If liked earlier → remove like
       if (userReaction === "like") {
         setLikes(likes - 1);
       }
