@@ -7,6 +7,7 @@ import Count from "./components/Count";
 import Like from "./components/Like";
 import Nav from "./components/Nav";
 import Example from "./components/Useeffect";
+import UserList from "./components/Users";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,6 +28,7 @@ function App() {
         <Route path="/count" element={<Count />}></Route>
         <Route path="/likes" element={<Like />}></Route>
         <Route path="/useeffect" element={<Example />}></Route>
+        <Route path="/users" element={<UserList />}></Route>
       </Routes>
     </Router>
   );
