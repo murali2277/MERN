@@ -1,6 +1,6 @@
 const express=require('express')
 const router=express.Router()
 
-const {task}=require('../controller/taskControllers')
-router.post('/task',task)
+const {tasks}=require('../controller/taskControllers')
+router.post('/task',tasks)
 module.exports=router
