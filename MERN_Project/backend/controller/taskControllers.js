@@ -25,44 +25,60 @@ exports.tasks = async (req, res) => {
 exports.getTasks = async (req, res) => {
   try {
     const tasks = await Task.find({ user: req.user.id });
-    if (!tasks || tasks.length==0){
-      return res.status(404).json({message:"No Task"});
-    }  
+    if (!tasks || tasks.length == 0) {
+      return res.status(404).json({ message: "No Task" });
+    }
     res.status(200).json({ tasks });
   } catch (err) {
     res.status(500).send(err);
   }
 };
-exports.getTask=async (req,res) => {
-  try{
-    const {id}= req.params;
-    const task=await Task.findOne({_id:id,user:req.user.id});
-    if (!task || task.length==0){
-      return res.status(404).json({message:"No Task"});
-    }  
-    res.status(200).json({task})
-  } catch (err){
+exports.getTask = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const task = await Task.findOne({ _id: id, user: req.user.id });
+    if (!task || task.length == 0) {
+      return res.status(404).json({ message: "No Task" });
+    }
+    res.status(200).json({ task });
+  } catch (err) {
     res.status(500).json(err);
   }
 };
-exports.updateTask=async (req,res) => {
-  try{
-    const {id}=req.params;
-    const user=req.user.id;
-    const {title,description,status}=req.body;
-    if (!user){
-      return res.status(401).json({message:"Unauthorized"});
+exports.updateTask = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = req.user.id;
+    const { title, description, status } = req.body;
+    if (!user) {
+      return res.status(401).json({ message: "Unauthorized" });
     }
-    const task=await Task.findOneAndUpdate(
-      {_id:id,user},
-      {title,description,status},
-      {new:true}
-    )
-    if(!task){
-      return res.status(404).json({message:"No Task"});
+    const task = await Task.findOneAndUpdate(
+      { _id: id, user },
+      { title, description, status },
+      { new: true },
+    );
+    if (!task) {
+      return res.status(404).json({ message: "No Task" });
     }
-    res.status(200).json({task,message:"Update Successfully"});
-  } catch (err){
-    res.status(500).json({err});
+    res.status(200).json({ task, message: "Update Successfully" });
+  } catch (err) {
+    res.status(500).json({ err });
   }
-}
+};
+exports.deleteTask = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = req.user?.id || req.user?._id;
+    if (!user) {
+      return res.status(401).json({ message: "Unauthorized" });
+    }
+    const task = await Task.findOneAndDelete({ _id: id, user });
+    if (!task) {
+      return res.status(404).json({ message: "Task Not Found" });
+    }
+    res.status(200).json({ message: "task delete successfully", task });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+};
